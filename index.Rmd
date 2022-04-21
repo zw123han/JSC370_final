@@ -1,24 +1,36 @@
 ---
-title: 'Notebook to get data for project'
+title: 'JSC370 Final: Understanding Gender Bias in Self-Reported Software Compensation Data'
+author: "Ziwen Han"
+date: '2022-04-21'
 output:
   pdf_document: default
   html_document: default
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE)
+```
+
 ```{r}
+# library setup
 library(tidyverse)
+library(lme4)
+```
+
+```{r, eval=F}
+# run this if you do not have the csv (same as data/data.Rmd)
 library(reticulate)
 ```
 
-# gets the raw data
-```{python, python.reticulate=FALSE, eval=FALSE, echo=TRUE}
+```{python, python.reticulate=FALSE, eval=F}
+# run this if you do not have the csv (same as data/data.Rmd)
 import pandas as pd
 import requests
 pd.DataFrame(requests.get('https://www.levels.fyi/js/salaryData.json').json()).to_csv('salary_data.csv', index=False)
 ```
 
-# cleans the data
-```{r}
+```{r, eval=F}
+# run this if you do not have the csv (same as data/data.Rmd)
 salary <- read.csv('salary_data.csv')
 salary_interest <- salary %>% select(timestamp, company, level, title, totalyearlycompensation, location, yearsofexperience, yearsatcompany, basesalary, stockgrantvalue, bonus, gender)
 
@@ -33,7 +45,26 @@ salary_interest <- salary_interest %>% filter(totalyearlycompensation>quantile(t
 salary_interest$company <- str_trim(str_to_title(salary_interest$company))
 salary_interest$location <- str_trim(str_to_title(salary_interest$location))
 salary_interest$date <- as.Date(strptime(salary_interest$timestamp, format="%m/%d/%Y"))
+
 salary_interest$male = ifelse(salary_interest$gender == "Male", 1, 0)
 salary_interest$female = ifelse(salary_interest$gender == "Female", 1, 0)
-write.csv(salary_interest, "salary_interest.csv")
 ```
+
+### Introduction
+
+### Methods
+
+refer to data/data.Rmd
+give brief summary
+
+### Results
+ analysis goes here
+### Discussion and Limitations
+
+### Summary and Conclusion
+
+
+### Reproducibility
+This document is fully reproducibile unless the data source has been removed. Refer to the `main.Rmd` file in the repository. Some lines of code are hidden.
+
+### References
