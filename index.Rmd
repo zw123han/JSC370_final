@@ -1,6 +1,5 @@
 ---
 title: 'JSC370 Final: Understanding Gender Bias in Self-Reported Software Compensation Data'
-author: "Ziwen Han"
 date: '2022-04-21'
 output:
   pdf_document: default
