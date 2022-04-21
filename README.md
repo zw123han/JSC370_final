@@ -16,7 +16,7 @@ For those more interested in the statistical side of things, refer to this PDF r
 https://github.com/zw123han/JSC370_final/blob/master/final_report.pdf
 
 #### Reproducibility
-All analysis, data sourcing, and files required to build the website is in this repo. This project is made using `R`, with a bit of `Python` for data extraction.
+All analysis, data sourcing, and files required to build the website is in this repo. Refer to the data directory for how to source the data. This project is made using `R`, with a bit of `Python` for data extraction.
 
 #### Acknowledgements
 The data from this project is sourced from levels.fyi. Some analysis code has been adapted from labs prepared by the JSC370 teaching team.
