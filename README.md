@@ -11,7 +11,7 @@ The following website contains interactive visualizations and descriptions of th
 https://zw123han.github.io/JSC370_final/
 
 #### PDF
-For those more interested in the statistical side of things, refer to this PDF report.
+For those more interested in the statistical side of things, refer to this PDF report (also available on website).
 
 https://github.com/zw123han/JSC370_final/blob/master/final_report.pdf
 
