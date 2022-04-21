@@ -19,6 +19,6 @@ If this analysis is meaningful to you, consider paying for levels.fyi's private 
 #### References
 
 [1] levels.fyi. (2022). Salary Data (updated 2021). https://www.levels.fyi/js/salaryData.json.
-Retrieved March 10, 2022.
+Retrieved April 21, 2022.
 
-[2] Grierson, M. (2020, January 8). https://towardsdatascience.com/a-beginners-guide-to-grabbing-and-analyzing-salary-data-in-python-e8c60eab186e. Retrieved March 10, 2022. 
+[2] Grierson, M. (2020, January 8). https://towardsdatascience.com/a-beginners-guide-to-grabbing-and-analyzing-salary-data-in-python-e8c60eab186e. Retrieved April 21, 2022. 
