@@ -1,0 +1,37 @@
+---
+title: 'Notebook to get data for project'
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r}
+library(tidyverse)
+library(reticulate)
+```
+
+# gets the raw data
+```{python, python.reticulate=FALSE, eval=FALSE, echo=TRUE}
+import pandas as pd
+import requests
+pd.DataFrame(requests.get('https://www.levels.fyi/js/salaryData.json').json()).to_csv('salary_data.csv', index=False)
+```
+
+# cleans the data
+```{r}
+salary <- read.csv('salary_data.csv')
+salary_interest <- salary %>% select(timestamp, company, level, title, totalyearlycompensation, location, yearsofexperience, yearsatcompany, basesalary, stockgrantvalue, bonus, gender)
+
+salary_interest <- salary_interest %>% mutate(
+  totalyearlycompensation = ifelse(totalyearlycompensation<1000, totalyearlycompensation*1000, totalyearlycompensation), 
+  basesalary = ifelse(basesalary<1000, basesalary*1000, basesalary),
+  stockgrantvalue = ifelse(stockgrantvalue<1000, stockgrantvalue*1000, stockgrantvalue),
+  bonus = ifelse(bonus<1000, bonus*1000, bonus))
+
+salary_interest <- salary_interest %>% filter(totalyearlycompensation>quantile(totalyearlycompensation, 0.05), totalyearlycompensation<quantile(totalyearlycompensation, 0.99), basesalary > quantile(basesalary, 0.05),basesalary < quantile(basesalary, 0.99), yearsatcompany < 60)
+
+salary_interest$company <- str_trim(str_to_title(salary_interest$company))
+salary_interest$location <- str_trim(str_to_title(salary_interest$location))
+salary_interest$date <- as.Date(strptime(salary_interest$timestamp, format="%m/%d/%Y"))
+write.csv(salary_interest, "salary_interest.csv")
+```
