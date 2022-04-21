@@ -11,7 +11,7 @@ The data itself is retrieved from an older JSON version of the levels.fyi databa
 - 5th percentile and 99th percentile of total compensation earners removed, to avoid erronous self-reported entries
 - Column attributes (company names, location) standardized, timestamps converted, unused columns removed
 
-You should expect (2) CSV files in the directory you ran the notebook. (1) salary.csv is the raw CSV directly converted from the stored JSON format. (2) salary_interest.csv containing the cleaned version of the dataset used in this project.
+You should expect (2) CSV files in the directory you ran the notebook. (1) salary_data.csv is the raw CSV directly converted from the stored JSON format. (2) salary_interest.csv containing the cleaned version of the dataset used in this project.
 
 #### Extras
 If this analysis is meaningful to you, consider paying for levels.fyi's private database which is cleaner and more up to date.
