@@ -1,13 +1,13 @@
 name: "final-website"
 output_dir: "docs"
 navbar:
-  title: "Self-Reported Total Compensation Visualizations in the Software Industry"
+  title: "Understanding Gender Bias in Self-Reported Software Compensation Data"
   left:
-    - text: "Interactive Visualizations"
-    - href: index.html
+    - text: "Report"
+    - href: main.html
   right:
-    - icon: fa-github fa-lg # fontawesome.com
-      href: https://github.com/JSC370/jsc370-2022/
+    - text: "PDF Downloadable Version"
+      href: https://github.com/zw123han/JSC370_final/blob/master/final_report.pdf
     - text: "JSC370 Home"
       href: https://jsc370.github.io/jsc370-2022/
 output:
